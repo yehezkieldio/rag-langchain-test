@@ -1,0 +1,27 @@
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    container_name: rag_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-raguser}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ragpassword}
+      POSTGRES_DB: ${POSTGRES_DB:-ragdb}
+    ports:
+      - "5432:5432"
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - test-rag-network
+
+networks:
+  test-rag-network:
+    name: test-rag-network
+    driver: bridge
+volumes:
+  postgres_data:
+    name: test-rag-postgres-data
