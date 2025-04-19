@@ -1,0 +1,36 @@
+# Mirae Standard Operating Procedure: Employee Onboarding
+
+**Document ID:** SOP-HR-001
+**Version:** 1.1
+**Effective Date:** 2025-04-01
+**Review Date:** 2026-04-01
+
+**Purpose:**
+This SOP outlines the standard process for integrating new employees into Mirae.
+
+**Scope:**
+Applies to all full-time and part-time employees hired by Mirae.
+
+**Procedure:**
+
+1.  **Offer Acceptance:** HR confirms offer acceptance and sets start date.
+2.  **Background Check:** Initiate background check process.
+3.  **System Access:** IT department provisions necessary system accounts and equipment.
+4.  **Welcome Kit:** Prepare and provide a welcome kit including company handbook and initial training materials.
+5.  **First Day:** Greet new employee, introduce to team, complete initial paperwork.
+6.  **Orientation:** Conduct a comprehensive orientation session covering company culture, policies, and benefits.
+7.  **Training:** Assign required initial training modules or buddy.
+8.  **Follow-up:** HR and manager to follow up within the first week and month.
+
+**Responsibilities:**
+*   HR Department: Overall process ownership, paperwork, orientation.
+*   IT Department: System access, equipment.
+*   Managers: Team introductions, initial training support, follow-up.
+
+**Related Documents:**
+*   Mirae Company Handbook
+*   Mirae IT Security Policy
+
+**Revision History:**
+*   1.0 (2024-07-15): Initial Draft
+*   1.1 (2025-04-01): Added background check step.

@@ -1,0 +1,31 @@
+# Mirae Standard Operating Procedure: Physical Access Control
+
+**Document ID:** SOP-SEC-003
+**Version:** 1.0
+**Effective Date:** 2024-10-01
+**Review Date:** 2025-10-01
+
+**Purpose:**
+To define the procedures for managing physical access to Mirae facilities to ensure security.
+
+**Scope:**
+All employees, contractors, and visitors accessing Mirae physical locations.
+
+**Procedure:**
+
+1.  **Employee Access:** Employees are issued an access badge upon hire. Badges must be worn at all times within the facility. Report lost badges immediately to Security.
+2.  **Visitor Access:** Visitors must sign in at the reception desk, present valid ID, and be issued a temporary visitor badge. Visitors must be escorted by a Mirae employee.
+3.  **Contractor Access:** Contractors require pre-authorization. Temporary access badges are issued with restricted access based on their work requirements.
+4.  **Access Levels:** Access badges are programmed with specific permissions based on roles and departments. Unauthorized access attempts are logged and reviewed by Security.
+5.  **Locking Procedures:** Doors and secure areas must be properly secured at all times. Employees are responsible for ensuring doors close and lock behind them.
+6.  **Emergency Procedures:** In case of an emergency, follow designated evacuation routes. Access control systems may automatically unlock certain doors during emergencies.
+
+**Responsibilities:**
+*   Security Department: Managing access control systems, issuing badges, monitoring for breaches.
+*   Employees: Wearing badges, following access procedures, reporting security concerns.
+*   Reception: Managing visitor sign-in and temporary badge issuance.
+
+**Reporting Security Concerns:** Any suspicious activity or access breaches should be reported immediately to the Security department.
+
+**Revision History:**
+*   1.0 (2024-10-01): Initial Draft

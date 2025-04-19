@@ -1,0 +1,37 @@
+# Mirae Standard Operating Procedure: Expense Reimbursement
+
+**Document ID:** SOP-FIN-002
+**Version:** 2.0
+**Effective Date:** 2025-03-15
+**Review Date:** 2026-03-15
+
+**Purpose:**
+To standardize the process for employees to submit and receive reimbursement for business-related expenses.
+
+**Scope:**
+All employees incurring approved business expenses on behalf of Mirae.
+
+**Procedure:**
+
+1.  **Incur Expense:** Employee incurs an approved business expense.
+2.  **Gather Documentation:** Retain original receipts and supporting documentation.
+3.  **Complete Expense Report:** Fill out the digital expense report form via the Mirae internal system.
+4.  **Attach Documentation:** Scan and attach all required documentation to the expense report.
+5.  **Submit for Approval:** Submit the completed expense report to the designated manager for approval.
+6.  **Manager Review:** Manager reviews the report and documentation, approves or rejects.
+7.  **Finance Processing:** Approved reports are sent to the Finance department for processing.
+8.  **Reimbursement:** Reimbursement is processed via direct deposit within 5-7 business days of Finance approval.
+
+**Responsibilities:**
+*   Employees: Submitting complete and accurate expense reports with documentation.
+*   Managers: Reviewing and approving eligible expenses.
+*   Finance Department: Processing approved reimbursements.
+
+**Maximum Submission Time:** Expense reports must be submitted within 30 days of the expense date.
+
+**Related Documents:**
+*   Mirae Travel and Expense Policy
+
+**Revision History:**
+*   1.0 (2023-11-01): Initial Draft
+*   2.0 (2025-03-15): Updated to reflect new digital system, revised submission time.

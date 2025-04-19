@@ -1,0 +1,52 @@
+# About MIRAE
+
+MIRAE is a forward-thinking organization committed to operational excellence, employee well-being, and robust security practices. The company’s core values are reflected in its standardized procedures for employee onboarding, expense reimbursement, and physical access control, ensuring a secure, efficient, and supportive environment for all staff, contractors, and visitors.
+
+## Employee Onboarding
+
+MIRAE’s onboarding process is designed to integrate new hires smoothly into the organization. The Human Resources (HR) department manages the process, which includes:
+
+- Confirmation of offer acceptance and setting of start dates.
+- Initiation of background checks for all new employees.
+- Provisioning of system accounts and equipment by the IT department.
+- Distribution of a welcome kit containing the company handbook and training materials.
+- A structured first day with team introductions and completion of initial paperwork.
+- Comprehensive orientation sessions covering company culture, policies, and benefits.
+- Assignment of required training modules or a buddy system for support.
+- Follow-up by HR and managers within the first week and month to ensure successful integration.
+
+## Expense Reimbursement
+
+MIRAE standardizes the process for employees to claim business-related expenses, ensuring transparency and timely reimbursement:
+
+- Employees incur approved business expenses and retain original receipts.
+- A digital expense report is completed and submitted via the internal system.
+- All supporting documentation is scanned and attached to the report.
+- The report is submitted to the designated manager for review and approval.
+- Approved reports are processed by the Finance department, with reimbursements made via direct deposit within 5-7 business days.
+- Expense reports must be submitted within 30 days of the expense date.
+
+## Physical Access Control
+
+MIRAE maintains strict physical access control to protect its facilities and personnel:
+
+- Employees are issued access badges upon hire and must wear them at all times within the facility.
+- Visitors are required to sign in at reception, present valid identification, and be escorted by a MIRAE employee.
+- Contractors receive pre-authorization and are issued temporary badges with restricted access.
+- Access badges are programmed with permissions based on roles and departments; unauthorized access attempts are logged and reviewed.
+- Employees are responsible for ensuring doors and secure areas are properly locked.
+- In emergencies, designated evacuation routes are followed, and access control systems may unlock certain doors automatically.
+
+## Responsibilities
+
+- **HR Department:** Oversees onboarding, paperwork, and orientation.
+- **IT Department:** Manages system access and equipment provisioning.
+- **Managers:** Support team introductions, training, and follow-up.
+- **Finance Department:** Processes expense reimbursements.
+- **Security Department:** Manages access control systems, badge issuance, and monitors for breaches.
+- **Reception:** Handles visitor sign-in and badge issuance.
+- **Employees:** Adhere to all procedures, wear badges, submit accurate expense reports, and report security concerns.
+
+## Commitment to Excellence
+
+MIRAE’s procedures are regularly reviewed and updated to reflect best practices and regulatory requirements. The company fosters a culture of compliance, security, and continuous improvement, ensuring a safe and productive workplace for everyone.

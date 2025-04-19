@@ -1,4 +1,6 @@
+import fs from "node:fs/promises";
 import path from "node:path";
+import { Document } from "langchain/document";
 import { TextLoader } from "langchain/document_loaders/fs/text";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { env } from "#/env";
@@ -19,37 +21,45 @@ async function loadData() {
         console.log("Existing data cleared.");
 
         // --- 3. Load Documents ---
-        // Example: Loading from a simple text file in the 'data' directory
-        const dataPath = path.join(__dirname, "..", "data", "sample.txt"); // Adjust path as needed
-        console.log(`Loading documents from: ${dataPath}`);
-        const loader = new TextLoader(dataPath);
-        const rawDocs = await loader.load();
+        const dataDir = path.join(__dirname, "..", "data");
+        console.log(`Loading documents from directory: ${dataDir}`);
 
-        if (!rawDocs || rawDocs.length === 0) {
-            console.log("No documents found to load.");
+        // Get all .txt files in the data directory
+        const files = await fs.readdir(dataDir);
+        const txtFiles = files.filter((file) => file.endsWith(".txt"));
+
+        if (txtFiles.length === 0) {
+            console.log("No .txt files found in the data directory.");
             return;
         }
-        console.log(`Loaded ${rawDocs.length} raw document(s).`);
-        // Add more loaders here for different file types (JSONLoader, CSVLoader, etc.)
+
+        let allDocs: Document[] = [];
+
+        // Load each .txt file
+        for (const file of txtFiles) {
+            const filePath = path.join(dataDir, file);
+            const loader = new TextLoader(filePath);
+            const docs = await loader.load();
+            allDocs = allDocs.concat(docs);
+            console.log(`Loaded ${docs.length} document(s) from ${file}`);
+        }
+
+        console.log(`Loaded ${allDocs.length} total raw document(s).`);
 
         // --- 4. Split Documents ---
         const textSplitter = new RecursiveCharacterTextSplitter({
-            chunkSize: 1000, // Adjust size as needed
-            chunkOverlap: 150 // Adjust overlap as needed
+            chunkSize: 1000,
+            chunkOverlap: 150
         });
-        const splitDocs = await textSplitter.splitDocuments(rawDocs);
+        const splitDocs = await textSplitter.splitDocuments(allDocs);
         console.log(`Split into ${splitDocs.length} chunks.`);
 
-        // --- 5. Add Metadata (Example) ---
-        // You can add source, timestamps, keywords etc. here
+        // --- 5. Add Metadata ---
         const docsWithMetadata = splitDocs.map((doc) => {
-            // Example: Add source filename to metadata
             doc.metadata = {
-                ...doc.metadata, // Keep existing metadata from loader
-                source: path.basename(dataPath),
+                ...doc.metadata,
                 loaded_at: new Date().toISOString(),
-                // Add a dummy 'title' if your source doesn't have one, for FTS example
-                title: `Chunk from ${path.basename(dataPath)}`
+                title: `Chunk from ${doc.metadata.source || "unknown"}`
             };
             return doc;
         });
@@ -66,7 +76,6 @@ async function loadData() {
     } catch (error) {
         console.error("Error during data loading:", error);
     } finally {
-        // Close the pool connection if the script is standalone
         await pool.end();
         console.log("PostgreSQL pool closed.");
     }

@@ -35,6 +35,11 @@
             }
         }
     ],
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+            "text": "DON'T USE `any` or `unknown` types. Use the most specific type possible. If you don't know the type, use `unknown` or create an interface or type if possible."
+        }
+    ],
     "github.copilot.chat.commitMessageGeneration.instructions": [
         {
             "text": "Generate a concise, first-person singular present-tense conventional commit message in the format <type>(<optional scope>): <commit message>, starting with a lowercase letter, max 72 characters, and output only the message with no extra text."

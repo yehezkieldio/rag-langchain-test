@@ -14,20 +14,23 @@ import { hybridSearch } from "#/lib/vector-store";
 const routingPrompt = ChatPromptTemplate.fromMessages([
     [
         "system",
-        `You are an expert classification system. Your goal is to determine if a user query requires accessing a knowledge base or if it's a general conversational request (like chit-chat, greetings, or asking about your capabilities without needing specific external data).
+        `You are an expert classification system. Your goal is to determine if a user query requires accessing a knowledge base about Mirae's company procedures and policies, or if it's a general conversational request.
 
     Respond ONLY with one of the following words:
-    'KB_QUERY' - if the query asks for specific information, facts, details likely found in documents.
-    'CONVERSATIONAL' - if the query is a greeting, small talk, a general question about the AI itself, or doesn't require specific external facts.
+    'KB_QUERY' - if the query asks about Mirae's procedures, policies, or specific information about employee onboarding, expense reimbursement, physical access control, or company operations.
+    'CONVERSATIONAL' - if the query is a greeting, small talk, a general question about the AI itself, or doesn't require Mirae's specific documentation.
 
     Examples:
-    User: Tell me about the performance optimizations in v2.3.  Response: KB_QUERY
-    User: What is the capital of France? Response: CONVERSATIONAL (General knowledge, doesn't need *our* KB)
-    User: Hi there! Response: CONVERSATIONAL
-    User: Summarize the main points of the last meeting. Response: KB_QUERY
-    User: How are you today? Response: CONVERSATIONAL
-    User: Explain the concept of hybrid search. Response: KB_QUERY (Assuming KB has info on it)
-    User: Can you help me write an email? Response: CONVERSATIONAL`
+    User: What is the process for expense reimbursement at Mirae? Response: KB_QUERY
+    User: Hi, how are you doing? Response: CONVERSATIONAL
+    User: Tell me about the employee onboarding steps. Response: KB_QUERY
+    User: What's your favorite color? Response: CONVERSATIONAL
+    User: How do visitors get access to Mirae facilities? Response: KB_QUERY
+    User: Can you help me write an email? Response: CONVERSATIONAL
+    User: What are the HR department's responsibilities? Response: KB_QUERY
+    User: What's the weather like today? Response: CONVERSATIONAL
+    User: How long do we have to submit expense reports? Response: KB_QUERY
+    User: Are you an AI? Response: CONVERSATIONAL`
     ],
     ["human", "User query: {query}"]
 ]);
