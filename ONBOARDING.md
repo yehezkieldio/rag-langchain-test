@@ -93,3 +93,36 @@ The system is built around several key components and follows a specific workflo
 *   **Reciprocal Rank Fusion (RRF):** A technique to combine ranked lists from different search methods (like vector and FTS) into a single, improved ranking.
 *   **LangChain Runnables:** A composable interface for building chains of operations (retrieval, prompting, LLM calls, parsing).
 *   **Routing:** Using an LLM or other logic to decide which processing path a query should take (e.g., RAG vs. conversational).
+
+## RAG & Retrieval Improvements:
+
+1. Advanced Re-ranking: While RRF is good, consider adding a cross-encoder re-ranking step after the initial hybrid retrieval. A cross-encoder takes the query and each retrieved document pair and provides a more accurate relevance score than vector/FTS alone. Libraries like sentence-transformers (via Python or a dedicated service) can be used for this.
+
+2. Query Transformation: Before retrieval, transform the user's query to potentially improve retrieval results. Techniques include:
+    - Hypothetical Document Embeddings (HyDE): Generate a hypothetical answer to the query first, embed that, and use the resulting vector for similarity search. This can sometimes align better with the embeddings of actual answer documents.
+    - Multi-Query Retriever: Use an LLM to generate multiple variations of the user's query from different perspectives, perform retrieval for each, and combine the results.
+
+3. Contextual Compression: Pass retrieved documents through a compression step before sending them to the LLM. This filters out irrelevant information within the retrieved documents, allowing you to potentially retrieve more documents initially (higher K) without exceeding context limits. LangChain offers `ContextualCompressionRetriever` wrappers.
+
+4. Parent Document Retriever: Index smaller chunks for better retrieval accuracy, but retrieve larger parent documents (or surrounding chunks) associated with the matched small chunks to provide more context to the LLM. This helps avoid losing context at chunk boundaries.
+
+5. Metadata Filtering: Allow filtering during retrieval based on metadata (e.g., source document, date range). This can be added as an option to the `hybridSearch` function in `vector-store.ts` or integrated directly if using LangChain retrievers that support it.
+
+6. Chunking Strategy: Experiment with different chunking strategies in `loader.ts`. `RecursiveCharacterTextSplitter` is a good default, but semantic chunking (grouping text based on meaning using embeddings) might yield better results for some documents.
+
+## Generation & Chain Improvements:
+
+1. Refine Prompts:
+    - In `chain.ts`, explicitly instruct the RAG prompt (ragPrompt) to cite the source documents (using the metadata you added) for its answers to improve trustworthiness.
+    - Consider adding more sophisticated handling for cases where the context doesn't contain the answer, beyond just "I don't know".
+
+2. Streaming: Modify the LLM calls and the chain in chain.ts and index.ts to support streaming responses. This significantly improves the perceived responsiveness in the CLI. Both ChatOpenAI and Runnables support streaming.
+
+3. Persistent Chat History: Replace BufferMemory with a persistent store like RedisChatMessageHistory (you already have Redis in your docker-compose.yml and env.ts) to maintain conversation history across application restarts. This requires adding the redis package and updating the memory initialization in getMainChain.
+
+## Evaluation & Observability:
+
+RAG Evaluation: Implement evaluation metrics specific to RAG systems. Frameworks like RAGAs or LangChain's evaluation tools can help measure:
+    - Context Precision/Recall: Is the retrieved context relevant and sufficient?
+    - Faithfulness: Does the generated answer stick to the provided context?
+    - Answer Relevance: Does the answer address the user's query
